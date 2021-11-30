@@ -1,0 +1,70 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>DIAGNOSIS FORM</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+</style>
+</head>
+<body>
+<div class="heading">
+<p>EDIT DIAGNOSIS FORM</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/fillDiagnosisForm}" th:object="${diagnosis}" method="POST">
+<div class="entry">
+
+
+
+
+    <label>PATIENT NUMBER</label>
+    <input type="text" name="patientid" th:value="${patientnumber}"></input>
+    </div><br><br><br><br>
+    
+<div class="entry">
+<label>REMARKS</label>
+    <input type="text" name="remarks" th:value="${diag.remarks}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>RECOMMENDATIONS</label>
+    <input type="text" name="recommendations" th:value="${recommendations}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>LAB REMARKS</label>
+    <input type="text" name="labremarks" th:value="${labremarks}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>LAB RECOMMENDATIONS</label>
+    <input type="text" name="labrecommendations" th:value="${labrecommendations}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>PHARMACY COMMENTS</label>
+    <input type="text" name="pharmcomments" th:value="${pharmcomments}"></input>
+    </div><br><br><br><br>
+    <div class="entry"> 
+    <label>DIAGNOSIS NUMBER</label>
+    <input type="text" name="diagnosisnumber" th:value="${diagnosisnumber}"></input>
+    </div><br><br><br><br>
+     <div class="entry">
+    <label>DATE</label>
+    <input type="date"name="date" th:value="${date}"></input>
+    </div><br><br><br><br>
+    
+    
+    
+    <div class="entry">
+       
+    <input type="submit" value="REGISTER PATIENT"> 
+          </div> 
+    </form>
+    </div>
+    

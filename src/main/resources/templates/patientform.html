@@ -1,0 +1,52 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>PATIENT FORM</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<style>
+
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; line-height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+
+
+}
+</style>
+</head>
+<body>
+<div class="heading">
+<p>PATIENT FORM</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/patientRegistration}" th:object="${patient}" method="POST">
+
+<div class="entry">
+<label>GENDER</label>
+    <input type="text" th:field="*{gender}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>PATIENT NAME</label>
+    <input type="text" th:field="*{patientname}"></input>
+    </div><br><br><br><br>
+    
+    <div class="entry">
+<label>CONTACT</label>
+    <input type="text" th:field="*{patientcontact}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>PATIENT NUMBER</label>
+    <input type="text" th:field="*{patientnumber}"></input>
+    </div><br><br><br><br>
+    <div class="entry"> 
+       
+    <input type="submit" value="REGISTER PATIENT"> 
+          </div> 
+    </form>
+    </div>
+    

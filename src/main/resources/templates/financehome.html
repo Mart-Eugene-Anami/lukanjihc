@@ -1,0 +1,92 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>RECEPTION HOME</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.sec1{height:100px; width:100%;float:left;}
+.sec2{height:100px; width:100%; float:left; text-align:center;}
+.sec3{height:100px; width:100%; float:left; text-align:center;}
+.sec4{height:100px; width:100%; float:left; text-align:center;}
+a{text-decoration:none; color:black;}
+body{font-family: 'Raleway', sans-serif;}
+.motherdiv{width:30%;height:45%;margin:0 auto;background-color:white;padding-top:2%;float:left;}
+.sec{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.sec:hover{background-color:#8c8cd9; border-radius:5px;}
+.sec1{height:auto; width:100%; float:left; padding-bottom:2%;}
+.list{width:100%;float:left;height:auto;background-color:white;padding-top:1%;padding-bottom:2%;}
+.item{width:20%;margin:auto;padding:0.5%;}
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+a:hover {
+  text-decoration: none; background-color:#8c8cd9;
+}
+.button{ background-color: #8c8cd9; 
+  color: gray; font-weight:normal;
+   width:50%; height:3%; font-size:16px; margin-top:4%; border-radius: 8px;}
+  .button:hover {
+  background-color:white;
+  
+}
+form.searchbar input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid grey;
+  float: left;
+  width: 30%;
+  background: #f1f1f1;
+}
+form.searchbar button {
+  float: left;
+  width: 10%;
+  padding: 10px;
+  background: #8c8cd9;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none; /* Prevent double borders */
+  cursor: pointer;
+}
+.formtemp{width:20%;}
+.button1{width:100%;}
+</style>
+</head>
+<body>
+<div class="sec1">
+<form class="searchbar" th:action="@{/fetchBill}" method="post">
+ 
+    
+    <input type="text" placeholder="Search For Bill..."name="billnumber" th:value="${billnumber}"></input>
+    <button type="submit"><i class="fa fa-search"></i></button>
+</form>
+</div>
+<div class="motherdiv">
+
+
+
+
+
+</div>
+
+
+  
+
+
+
+
+
+
+
+</body>
+</html>

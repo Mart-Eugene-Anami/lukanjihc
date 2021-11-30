@@ -1,0 +1,109 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>RECEPTION HOME</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="fontawesome-free-5.15.1/css/all.css">
+<script src="https://kit.fontawesome.com/afd6aa68df.js" crossorigin="anonymous"></script>
+<style>
+.sec1{height:auto; width:50%;float:left;}
+.sec2{height:100px; width:100%; float:left; text-align:center;}
+.sec3{height:100px; width:100%; float:left; text-align:center;}
+.sec4{height:100px; width:100%; float:left; text-align:center;}
+a{text-decoration:none; color:black;}
+body{font-family: 'Raleway', sans-serif;}
+.motherdiv{width:50%;height:auto;background-color:white;float:left;}
+.sec{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.sec:hover{background-color:#8c8cd9; border-radius:5px;}
+
+.list{width:100%;margin-top:15%;float:left;height:auto;background-color:white;padding-top:1%;padding-bottom:2%;}
+.item{width:100%;margin:auto;padding:0.5%;}
+
+.head{width:100%;height:auto;float:left;}
+a:link {
+  text-decoration: none;
+  
+}
+
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+   background-color: white;
+}
+li {
+  display: inline;
+}
+li a {
+ 
+  
+  text-align: center;
+  padding: 14px 16px;
+  font-size:12px;
+}
+li a:hover {
+  background-color: #8c8cd9;
+}
+#head{width:100%;height:auto;float:left;margin-bottom:5%;}
+#nav{width:45%;height:auto;float:right;}
+</style>
+</head>
+<body>
+
+<div id=head> 
+<div id=nav>
+<ul>
+  <li><a th:href="@{/fetchReceptionHome}">RECEPTION</a></li>
+   <li><a th:href="@{/triagehome}">TRIAGE</a></li>
+  <li><a th:href="@{/fetchDocHome}">CONSULTATION</a></li>
+  <li><a th:href="@{/fetchLabHome}">LAB</a></li>
+  <li><a th:href="@{/fetchPharmHome}">PHARMACY</a></li>
+  <li><a th:href="@{/fetchPharmHome}">BILLING</a></li>
+</ul> 
+</div>
+</div>
+
+
+<div class="head">
+<div class="sec1">
+<form th:action="@{/searchPatient}" method="post">
+ 
+    
+    <input  type="text" placeholder="Search For Patient..."name="patientname" th:value="${patientname}"></input>
+    
+</form>
+</div>
+<div class="motherdiv">
+
+<div class="sec"><a th:href="@{/getPatientForm}">REGISTER PATIENT</a></div>
+
+
+
+</div>
+</div>
+
+
+  
+<div class="list">
+<ul>
+
+<li th:each="patient:${patientlist}">
+<div class="sec"><a th:href="'/patientpage/'+${patient.patientnumber}" th:text="${patient.patientname}"></a>
+    </div>
+    </li> 
+    
+</ul>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

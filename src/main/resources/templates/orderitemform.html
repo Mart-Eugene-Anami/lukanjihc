@@ -1,0 +1,49 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<title>PATIENT FORM</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+</style>
+</head>
+<body>
+<div class="heading">
+<p>FILL ORDER ITEM</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/fillOrderItem}" th:object="${orderitem}" method="POST">
+ 
+ 
+ 
+   
+    <div class="entry">
+<label>ORDER ITEM ID</label>
+    <input type="text" th:field="*{itemid}"></input>
+    </div><br><br><br><br>
+    
+    
+    
+    <div class="entry"> 
+    
+    <input type="hidden" name="ordernumber" th:value="${ordernumber}"></input>
+    </div><br><br><br><br>
+     
+    
+    
+    <div class="entry">
+       
+    <input type="submit" value="ADD ORDER ITEM"> 
+          </div> 
+    </form>
+    </div>
+    

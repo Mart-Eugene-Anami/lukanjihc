@@ -1,0 +1,42 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>MODE FORM</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+</style>
+</head>
+<body>
+<div class="heading">
+<p>MODE ENTRY</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/fillModeForm}" th:object="${mode}" method="POST">
+
+<div class="entry">
+<label>MODE NAME</label>
+    <input type="text" th:field="*{modename}"></input>
+    </div><br><br><br><br>
+    <div class="entry">
+<label>MODE ID</label>
+    <input type="text" th:field="*{modeid}"></input>
+    </div><br><br><br><br>
+    
+
+    <div class="entry"> 
+       
+    <input type="submit" value="SUBMIT"> 
+          </div> 
+    </form>
+    </div>
+    

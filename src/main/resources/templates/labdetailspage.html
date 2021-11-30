@@ -1,0 +1,38 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.sec1{height:100px; width:100%; float:left;}
+.sec2{height:100px; width:100%; float:left; text-align:center;}
+.sec3{height:100px; width:100%; float:left; text-align:center;}
+.sec4{height:100px; width:100%; float:left; text-align:center;}
+a{text-decoration:none; color:black;}
+body{font-family: 'Raleway', sans-serif;}
+.motherdiv{width:40%;height:45%;margin:0 auto;background-color:gray;}
+.sec{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.sec:hover{background-color:#8c8cd9; border-radius:5px;}
+.sec1{height:auto; width:100%; float:left; padding-bottom:2%;}
+.button{ background-color: #8c8cd9; 
+  color: gray; font-weight:normal;
+   width:50%; height:3%; font-size:16px; margin-top:4%; border-radius: 8px;}
+  .button:hover {
+  background-color:white;
+  
+}
+.formtemp{width:20%;}
+.button1{width:100%;}
+</style>
+</head>
+<body>
+<ul>
+   <li th:each= "labtests: ${Items}" th:text="${labtests.testid}" ></li>
+</ul>
+<p th:unless="${Items.size()}"><i>NO ITEMS YET</i> </p>
+
+<p><a th:href="'/addTestItem/'+${labform.formid}"> ADD TEST</a></p>
+<p><a th:href="'/editLabForm/'+${labform.formid}">EDIT DETAILS</a> </p>
+<p><a th:href="'/getLabDetailsForm/'+${labform.formid}">LAB FORM</a> </p>
+</body>
+</html>

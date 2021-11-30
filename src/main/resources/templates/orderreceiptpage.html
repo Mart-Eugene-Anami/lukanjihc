@@ -1,0 +1,41 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>RECEIPT</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.sec1{height:100px; width:100%; float:left;}
+.sec2{height:100px; width:100%; float:left; text-align:center;}
+.sec3{height:100px; width:100%; float:left; text-align:center;}
+.sec4{height:100px; width:100%; float:left; text-align:center;}
+a{text-decoration:none; color:black;}
+body{font-family: 'Raleway', sans-serif;}
+.motherdiv{width:40%;height:45%;margin:0 auto;background-color:gray;}
+.sec{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.sec:hover{background-color:#8c8cd9; border-radius:5px;}
+.sec1{height:auto; width:100%; float:left; padding-bottom:2%;}
+.button{ background-color: #8c8cd9; 
+  color: gray; font-weight:normal;
+   width:50%; height:3%; font-size:16px; margin-top:4%; border-radius: 8px;}
+  .button:hover {
+  background-color:white;
+  
+}
+.formtemp{width:20%;}
+.button1{width:100%;}
+.display{width:100%; text-align:center; margin:auto;height:auto;float:left;}
+.linksdisplay{margin:auto;width:100%;float:left;}
+.displayitem{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.displayitem:hover{background-color:#8c8cd9; border-radius:5px;}
+</style>
+</head>
+<body>
+<div class="display">
+<p> RECEIPT DETAILS</p>
+<p th:text="${orderreceipt.order.date}">
+<p th:text="${orderreceipt.total}">
+<p th:text="${orderreceipt.staff.name}">
+<p th:text="${orderreceipt.receiptnumber}">
+
+</div>
+</body>

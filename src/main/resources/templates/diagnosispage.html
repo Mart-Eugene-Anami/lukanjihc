@@ -1,0 +1,89 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>DIAGNOSIS DETAILS</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.sec1{height:100px; width:100%; float:left;}
+.sec2{height:100px; width:100%; float:left; text-align:center;}
+.sec3{height:100px; width:100%; float:left; text-align:center;}
+.sec4{height:100px; width:100%; float:left; text-align:center;}
+a{text-decoration:none; color:black;}
+body{font-family: 'Raleway', sans-serif;}
+.motherdiv{width:40%;height:45%;margin:0 auto;background-color:gray;}
+.sec{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.sec:hover{background-color:#8c8cd9; border-radius:5px;}
+.sec1{height:auto; width:100%; float:left; padding-bottom:2%;}
+.button{ background-color: #8c8cd9; 
+  color: gray; font-weight:normal;
+   width:50%; height:3%; font-size:16px; margin-top:4%; border-radius: 8px;}
+  .button:hover {
+  background-color:white;
+  
+}
+.formtemp{width:20%;}
+.button1{width:100%;}
+.display{width:100%; text-align:center; margin:auto;height:auto;float:left;}
+.linksdisplay{margin:auto;width:100%;float:left;}
+.displayitem{float:left;width:100%;height:50px;background-color:white;text-align:center;}
+.displayitem:hover{background-color:#8c8cd9; border-radius:5px;}
+.patientitem{width:19%;float:left;height:auto;}
+a:link {
+  text-decoration: none;
+  
+}
+
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+   background-color: white;
+}
+li {
+  display: inline;
+}
+li a {
+ 
+  
+  text-align: center;
+  padding: 14px 16px;
+   font-size:12px;
+}
+li a:hover {
+  background-color: #8c8cd9;
+}
+#head{width:100%;height:auto;float:left;margin-bottom:20%;}
+#nav{width:45%;height:auto;float:right;}
+</style>
+</head>
+<body>
+<div id=head> 
+<div id=nav>
+<ul>
+  <li><a th:href="@{/fetchReceptionHome}">RECEPTION</a></li>
+   <li><a th:href="@{/triagehome}">TRIAGE</a></li>
+  <li><a th:href="@{/fetchDocHome}">CONSULTATION</a></li>
+  <li><a th:href="@{/fetchLabHome}">LAB</a></li>
+  <li><a th:href="@{/fetchPharmHome}">PHARMACY</a></li>
+  <li><a th:href="@{/fetchBill}">BILLING</a></li>
+</ul> 
+</div>
+</div>
+<div class="display">
+<div class="patientitem"><p>PATIENT NUMBER:</p><p th:text="${diagnosis.patient.patientnumber}"></p></div>
+<div class="patientitem"><p>CONSULTATION NUMBER:</p><p th:text="${diagnosis.diagnosisnumber}"></p></div>
+
+<div class="patientitem"><P>RECOMMENDATIONS:</p><p th:text="${diagnosis.recommendations}"></p></div>
+<div class="patientitem"><p>DATE:</p><p th:text="${diagnosis.date}"></p></div>
+</div>
+
+<div class="linksdisplay">
+<div class="displayitem"><p><a th:href="'/patientpage/'+${diagnosis.patient.patientnumber}">PATIENT PAGE</a> </p></div>
+<div class="displayitem"><p><a th:href="'/editDiagnosisForm/'+${diagnosis.diagnosisnumber}">EDIT CONSULTATION FORM</a> </p></div>
+<div class="displayitem"><p><a th:href="'/getForm/'+${diagnosis.diagnosisnumber}">LAB FORM</a> </p></div>
+<div class="displayitem"><p><a th:href="'/getPharmForm/'+${diagnosis.patient.patientnumber}">PHARMACY FORM</a> </p></div>
+</div>
+</body>

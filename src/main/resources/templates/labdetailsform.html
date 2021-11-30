@@ -1,0 +1,54 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>LAB DETAILS FORM</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+</style>
+</head>
+<body>
+<div class="heading">
+<p>FILL IN DETAILS</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/fillDetailsForm}" th:object="${labdetails}" method="POST">
+
+<div class="entry">
+<label>FORM NUMBER</label>
+    <input type="text" th:field="*{formnumber}"></input>
+    </div><br><br><br><br>
+    
+    <div class="entry">
+    <label>STAFF NUMBER</label>
+    <input type="text" th:field="*{staff.usernumber}"></input>
+    </div><br><br><br><br>
+   
+    <div class="entry">
+<label>LAB NOTES</label>
+    <textarea th:field="*{labnotes}"></textarea>
+    </div><br><br><br><br>
+    
+   <div class="entry">
+<label>FINDINGS</label>
+    <textarea th:field="*{findings}"></textarea>
+    </div><br><br><br><br>
+     
+   <div class="entry">
+<input type="hidden" name="formid" th:value="${formid}"></input>
+    </div><br><br><br><br>  
+       <div>
+    <input type="submit" value="SUBMIT"> 
+          </div> 
+    </form>
+    </div>
+ 

@@ -1,0 +1,66 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="ISO-8859-1">
+<title>HOSPITAL MGT</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+body{font-family: 'Raleway', sans-serif;}
+.items{text-decoration:none;float:left;width:100%;height:50px;background-color:white;text-align:center;line-height:50px;}
+.items:hover{background-color:#8c8cd9; border-radius:5px;}
+a:link {
+  text-decoration: none;
+  
+}
+
+a:visited {
+  text-decoration: none;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+   background-color: white;
+}
+li {
+  display: inline;
+}
+li a {
+ 
+  
+  text-align: center;
+  padding: 14px 16px;
+  font-size:12px;
+}
+li a:hover {
+  background-color: #8c8cd9;
+}
+#head{width:100%;height:auto;float:left;margin-bottom:20%;}
+#nav{width:45%;height:auto;float:right;}
+#mother_div{width:40%;height:15%;margin:auto;background-color:white;}
+</style>
+</head>
+<body>
+<div id=head> 
+<div id=nav>
+<ul>
+  <li><a th:href="@{/fetchReceptionHome}">RECEPTION</a></li>
+   <li><a th:href="@{/triagehome}">TRIAGE</a></li>
+  <li><a th:href="@{/fetchDocHome}">CONSULTATION</a></li>
+  <li><a th:href="@{/fetchLabHome}">LAB</a></li>
+  <li><a th:href="@{/fetchPharmHome}">PHARMACY</a></li>
+  <li><a th:href="@{/fetchBill}">BILLING</a></li>
+</ul> 
+</div>
+</div>
+
+<div id=mother_div>
+
+<div class=items><a th:href="@{/userManagement}">USER MANAGEMENT</a></div>
+
+
+
+<div class=items><a th:href="@{/fetchResourcesHome}">RESOURCES</a></div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<meta charset="ISO-8859-1">
+<title>BILL FORM</title>
+<link th:href="@{/css/style.css}" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+.selecteditems: hover{background-color:#8c8cd9;}
+</style>
+</head>
+<body>
+<div class="heading">
+<p>ITEM FORM</p>
+</div>
+<div class="formcontainer">
+<form th:action="@{/addItem}" th:object="${item}" method="post">
+
+<div class="entry">
+ <label> ITEM NAME</label>
+    
+    <input type="text" th:field="*{itemname}"></input> 
+    </div><br><br><br><br>
+    
+    <div class="entry">
+ <label> IDENTITY</label>
+    
+    <input type="text" th:field="*{identity}"></input> 
+    </div><br><br><br><br>
+    
+    
+    <div class="entry"> 
+    <label> COST</label>
+    <input type="text" th:field="*{cost}"></input> 
+    
+          </div><br><br><br><br>
+     
+      <div class="entry">    
+    <input type="submit" value="SUBMIT"/>  
+          </div>         
+</form>
+</div>
+</body>
+</html>

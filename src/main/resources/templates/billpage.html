@@ -1,0 +1,32 @@
+<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<meta charset="ISO-8859-1">
+<title>BILL FORM</title>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<style>
+.formcontainer{width:70%; margin:auto; }
+body{ font-family: 'Raleway', sans-serif;}
+.entry{width:100%; margin:10px; float:left; display:block;}
+.input{height:auto;}
+.textarea{height:150px;}
+.submissionForm{ margin:2%; padding:2%; font-size:12px;}
+.input{width:100%;}
+.textarea{width:100%; height:100%;}
+.heading{width:100%; height:70px; background-color:#8c8cd9; margin:2%; text-align:center; }
+.selecteditems: hover{background-color:#8c8cd9;}
+
+
+</style>
+</head>
+
+<body>
+<p><i>BILL ITEMS</i></p>
+<ul>
+   <li th:each= "item: ${Items}" th:text="${item.itemname}" ></li>
+</ul>
+<p th:unless="${Items.size()}"><i>NO ITEMS YET</i> </p>
+<p> <i>BILL TOTAL</i></p>
+<p th:text="${billtotal}"></p>
+<p><a th:href="'/addbillItem/'+${billnumber}"> ADD BILL ITEMS</a></p>
+<p><a th:href="'/generateBillReceipt/'+${billnumber}"> GENERATE RECEIPT</a></p>
+</body>
